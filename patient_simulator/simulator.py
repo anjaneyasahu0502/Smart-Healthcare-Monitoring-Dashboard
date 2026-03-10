@@ -4,7 +4,7 @@ import pandas as pd
 import paho.mqtt.client as mqtt
 import random
 
-df = pd.read_csv("patient_simulator/mitbih_hr.csv")
+df = pd.read_csv("mitbih_hr.csv")
 
 client = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2)
 client.connect("127.0.0.1",1883)

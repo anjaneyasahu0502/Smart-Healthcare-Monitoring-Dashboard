@@ -1,7 +1,7 @@
 import pandas as pd
 import time
 
-df = pd.read_csv("patient_simulator/mitbih_hr.csv")
+df = pd.read_csv("../patient_simulator/mitbih_hr.csv")
 
 start = time.time()
 

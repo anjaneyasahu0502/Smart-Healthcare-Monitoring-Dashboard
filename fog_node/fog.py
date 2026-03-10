@@ -39,12 +39,12 @@ def on_message(client,userdata,msg):
         "timestamp":data["timestamp"]
     }
 
-    requests.post(CLOUD_HEALTH_API,json=health)
+    requests.post(CLOUD_HEALTH_API, json=health, proxies={"http": None, "https": None})
 
     if status=="CRITICAL":
         alert=health.copy()
         alert["type"]="CRITICAL"
-        requests.post(CLOUD_ALERT_API,json=alert)
+        requests.post(CLOUD_ALERT_API, json=alert, proxies={"http": None, "https": None})
         print("CRITICAL:",alert)
     else:
         print(status)
